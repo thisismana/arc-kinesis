@@ -19,7 +19,6 @@ class Main {
     }
 
     private static GetShardIteratorResponse shard_iterator(KinesisAsyncClient client, String stream_name) throws ExecutionException, InterruptedException {
-        System.out.println("shard_iterator(" + stream_name + ")");
         var request = GetShardIteratorRequest.builder()
                 .streamName(stream_name)
                 .shardIteratorType(ShardIteratorType.TRIM_HORIZON)
