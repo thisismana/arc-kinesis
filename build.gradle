@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'application'
+}
 
 repositories {
     mavenCentral()
@@ -11,4 +14,13 @@ dependencies {
     implementation 'software.amazon.awssdk:sts'
     implementation 'software.amazon.awssdk:kinesis'
     implementation 'software.amazon.awssdk:netty-nio-client'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_13
+    targetCompatibility = JavaVersion.VERSION_13
+}
+
+application {
+    mainClassName = 'de.thisismana.Main'
 }
